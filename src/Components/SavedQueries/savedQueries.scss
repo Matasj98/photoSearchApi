@@ -1,0 +1,25 @@
+.savedQueries {
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .u-flexSpaceBetween {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  li {
+    cursor: pointer;
+    margin: 10px 0;
+    padding: 5px;
+    padding-left: 0;
+  }
+
+  button {
+    border: none;
+    background-color: white;
+    color: red;
+    cursor: pointer;
+  }
+}

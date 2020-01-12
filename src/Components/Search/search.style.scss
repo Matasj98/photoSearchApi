@@ -1,0 +1,42 @@
+.search {
+  margin: 20px auto;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+
+  input {
+    height: 100%;
+    width: 70%;
+    border: 1px solid black;
+    padding: 0 10px;
+  }
+
+  button {
+    margin: 0 10px;
+    border: 1px solid grey;
+    background-color: white;
+    height: 100%;
+    padding: 0 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    transition: 0.3s all;
+    background-color: grey;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  @media only screen and (max-width: 940px) {
+    & {
+      display: block;
+      text-align: center;
+    }
+
+    button {
+      padding: 10px;
+      margin: 5px;
+    }
+  }
+}
