@@ -1,9 +1,14 @@
-export const addQuery = name => ({
+export const addQuery = query => ({
   type: "addQuery",
-  name
+  query
 });
 
 export const changedQuery = query => ({
   type: "changedQuery",
+  query
+});
+
+export const loadQuery = query => ({
+  type: "loadQuery",
   query
 });

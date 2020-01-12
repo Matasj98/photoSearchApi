@@ -7,9 +7,14 @@ export const savedQueries = (state = initialState, action) => {
     case "addQuery":
       return {
         ...state,
-        queries: state.queries.concat(action.name)
+        queries: action.query
       };
     case "changedQuery":
+      return {
+        ...state,
+        queries: action.query
+      };
+    case "loadQuery":
       return {
         ...state,
         queries: action.query

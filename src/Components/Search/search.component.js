@@ -1,7 +1,7 @@
 import React from "react";
 import "./search.style.scss";
 import { connect } from "react-redux";
-import { addQuery } from "../../Actions/action";
+import { saveQuery } from "../../Thunk/saveQuery";
 
 class Search extends React.Component {
   constructor() {
@@ -44,7 +44,7 @@ class Search extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  onAddQuery: name => dispatch(addQuery(name))
+  onAddQuery: name => dispatch(saveQuery(name))
 });
 
 export default connect(null, mapDispatchToProps)(Search);

@@ -4,6 +4,8 @@ import axios from "axios";
 import Search from "./Components/Search/search.component";
 import Image from "./Components/Image/image.component";
 import SavedQueries from "./Components/SavedQueries/savedQueries.component";
+import { loadQuery } from "./Actions/action";
+import { connect } from "react-redux";
 
 class App extends React.Component {
   constructor() {
@@ -12,6 +14,12 @@ class App extends React.Component {
     this.state = {
       imageData: null
     };
+  }
+
+  componentDidMount() {
+    if (window.localStorage.getItem("query") !== null) {
+      this.props.onLoadQuery(JSON.parse(window.localStorage.getItem("query")));
+    }
   }
 
   getUnsplashImage = item => {
@@ -62,4 +70,8 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  onLoadQuery: query => dispatch(loadQuery(query))
+});
+
+export default connect(null, mapDispatchToProps)(App);
